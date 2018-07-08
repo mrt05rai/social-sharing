@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { Route, Redirect } from 'react-router'
+// import { Redirect } from 'react-router-dom'
 import * as MetaData from '../utils/MetaData';
 import FormInput from '../component/FormInput'
 import Button from '../component/Button'
@@ -18,13 +20,13 @@ class Login extends Component {
     };
   }
 
-	componentWillRecieveProps(nextProps) {
-		console.log("nextprops>>>>>>>>>>> ", nextProps)
-		console.log("nextprops>>>>>>>>>>> ", this.props)
-		if (nextProps.changingStatus === 'success') {
-			// <Redirect to="/" />
+	componentWillReceiveProps (nextProps) {
+		// if (nextProps.signup.changingStatus === 'success') {
+			<Redirect to="/home" />
+			// window.location = "/home"
 			// this.props.history.push("/home");
-		}
+			console.log("nextprops>>>>>>>>>>>inside it ", nextProps)
+		// }
 	}
   
   logIn() {

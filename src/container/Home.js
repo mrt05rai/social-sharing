@@ -1,18 +1,22 @@
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import React from 'react';
+import { connect } from 'react-redux';
 
-const Home = (props) => {
-  const {
-    name
-  } = props;
-  return (
-    <p>Welcome !!!</p>
-  );
-};
+class Home extends Component {
+  render () {
+    console.log(">>>>> props... ", this.props)
+    return (
+      <p>Welcome !!!</p>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {user: state.login}
+}
 
 Home.propTypes = {
   name: PropTypes.string
 };
 
-export default Home
+export default connect(mapStateToProps)(Home)

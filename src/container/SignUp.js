@@ -20,13 +20,12 @@ class SignUp extends Component {
     };
   }
   
-	componentWillRecieveProps(nextProps) {
-		console.log("nextprops>>>>>>>>>>> ", nextProps)
-		console.log("nextprops>>>>>>>>>>> ", this.props)
-		// if (nextProps.changingStatus === 'success') {
-		// 	// <Redirect to="/" />
-		// 	this.props.history.push("/");
-		// }
+	componentWillReceiveProps (nextProps) {
+		if (nextProps.signup.changingStatus === 'success') {
+			// <Redirect to="/" />
+			window.location = "/"
+			// this.props.history.push("/");
+		}
 	}
 
   signUp() {
@@ -42,7 +41,6 @@ class SignUp extends Component {
 			return
 		}
 		this.props.dispatch({ type: 'SIGN_UP', payload: this.state });
-    console.log("signup working...........", this.state)
   }
 
   getFormInputFields() {
@@ -70,7 +68,6 @@ class SignUp extends Component {
 		const {
         error, errorMessage
     } = this.state;
-				console.log("nextprops>>>>>>>>>>>222 ", this.props)
     return (
       <div className="accnt_form_wrap wdth100">
         <h2 className="text-center">{MetaData.SIGN_UP}</h2>
@@ -92,7 +89,6 @@ class SignUp extends Component {
 }
 
 const mapStateToProps = state => {
-	console.log("state.....", state)
   return {signup: state.signup}
 };
 

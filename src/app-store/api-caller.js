@@ -8,7 +8,7 @@ export default (endpoint, method = 'get', body) => fetch(`${API_URL}${endpoint}`
   method,
   body: JSON.stringify(body),
   headers: {
-    "Content-Type": "application/x-www-form-urlencoded"
+    "Content-Type": "application/json; charset=utf-8",
   },
 })
   .then(response => response.json().then(json => ({ json, response })))
@@ -19,6 +19,6 @@ export default (endpoint, method = 'get', body) => fetch(`${API_URL}${endpoint}`
     return json;
   })
   .then(
-    response => response,
-    error => error,
-  );
+  response => response,
+  error => error,
+);
