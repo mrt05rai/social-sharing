@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.accnt_form_wrap{
+    padding: 35px 0;
+}
+.accnt_form_wrap .cmmnt_form{
+    width: 100%;
+    float: left;
+    margin-top: 0;
+}
+.accnt_form_wrap input::-webkit-input-placeholder {
+   /* Chrome/Opera/Safari */
+    color: #555;
+}
+.accnt_form_wrap input::-moz-placeholder {
+   /* Firefox 19+ */
+    color: #555;
+}
+.accnt_form_wrap input:-ms-input-placeholder {
+   /* IE 10+ */
+    color: #555;
+}
+.accnt_form_wrap input:-moz-placeholder {
+   /* Firefox 18- */
+    color: #555;
+}
+.wdth100{
+    width: 100%;
+    float: left;
+}
+.cmmnt_form{
+    width: 67%;
+    float: left;
+    margin-top: 0;
+}
+.cmmnt_form .form-group{
+    margin-bottom: 20px;
+    clear: left;
+}
+.cmmnt_form .form-group{
+       width: 100%;
+   }
+/*.cmmnt_form .delete_acount{
+    color: #666666;
+    background: url(../assets/images/delte_account_icon.png) no-repeat;
+    float: right;
+    padding-left: 27px;
+}*/
+.cmmnt_form label{
+    margin-bottom: 10px;
+    font-family: 'Avenir-Book';
+    text-transform: capitalize;
+    font-size: 15px;
+    font-weight: normal;
+}
+.cmmnt_form{
+    width: 100%;
+}
+.search_btn {
+  padding: 21px 55px 21px 20px;
+}
+.search_btn {
+    display: inline-block;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Avenir-Book';
+    width: 100%;
+    padding: 21px 42px 21px 25px;
+    border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    /*background: #fd4d4f url(../assets/images/right_icon.png)no-repeat 86% center;*/
+    outline: none;
+    text-transform: capitalize;
+}
+.search_btn:hover {
+    /*background: #666666 url(../assets/images/right_icon.png)no-repeat 86% center;*/
+    color:#fff;
+}
+.pay.paymnt_btn{
+    background-image: none;
+    padding: 9px 24px 9px 24px;
+    cursor: pointer;
+}
+.font14{
+    font-size: 14px;
+}
+.cmmnt_input{
+    height: 42px;
+    border:1px solid #d8d8d8;
+    box-shadow: 0px 0px 0px;
+    font-size: 15px;
+    /*//text-transform: capitalize;*/
+}
+.cmmnt_input::-webkit-input-placeholder {
+   /* Chrome/Opera/Safari */
+    color: #9b9b9b;
+}
+.cmmnt_input::-moz-placeholder {
+   /* Firefox 19+ */
+    color: #9b9b9b;
+}
+.cmmnt_input:-ms-input-placeholder {
+   /* IE 10+ */
+    color: #9b9b9b;
+}
+.cmmnt_input:-moz-placeholder {
+   /* Firefox 18- */
+    color: #9b9b9b;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
