@@ -69,20 +69,14 @@ class SignUp extends Component {
         error, errorMessage
     } = this.state;
     return (
-      <div className="accnt_form_wrap wdth100">
-        <h2 className="text-center">{MetaData.SIGN_UP}</h2>
-        <form className="cmmnt_form">
-					{error && <p>{errorMessage}</p>}
+      <div className="form_div">
+        <h2 className="form_label">{MetaData.SIGN_UP}</h2>
+        <form>
+					{error && <p className="error">{errorMessage}</p>}
           {this.getFormInputFields()}
-          <div className="form-group wdth100">
-            <Button
-              className="pay paymnt_btn"
-              label={MetaData.SIGN_UP}
-              onClick={(e) => this.signUp(e)}
-            />
-            <Link onClick={onClick} >{MetaData.LOG_IN}</Link>
-          </div>
+          <p><input type="button" onClick={(e) => this.signUp(e)} value={MetaData.SIGN_UP}/></p>
         </form>
+        <Link onClick={onClick} >{MetaData.LOG_IN}</Link>
       </div>
     );
   }

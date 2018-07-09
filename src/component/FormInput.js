@@ -7,8 +7,7 @@ const FormInput = (props) => {
     wrapClass, labelClass, inputClass, label, type, holder, value, onChange,
   } = props;
   return (
-    <div className={wrapClass}>
-      <label className={labelClass}>{label}</label>
+    <p className={wrapClass}>
       <Input
         type={type}
         className={inputClass}
@@ -16,7 +15,7 @@ const FormInput = (props) => {
         value={value}
         onChange={(e) => onChange(e)}
       />
-    </div>
+    </p>
   );
 };
 

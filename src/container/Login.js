@@ -22,7 +22,11 @@ class Login extends Component {
 
 	componentWillReceiveProps (nextProps) {
 		// if (nextProps.signup.changingStatus === 'success') {
-			<Redirect to="/home" />
+			<Redirect to={{
+        pathname: "/home"
+    }} 
+  />
+      
 			// window.location = "/home"
 			// this.props.history.push("/home");
 			console.log("nextprops>>>>>>>>>>>inside it ", nextProps)
@@ -67,20 +71,14 @@ class Login extends Component {
         error, errorMessage
     } = this.state;
     return (
-      <div className="accnt_form_wrap wdth100">
-        <h2 className="text-center">{MetaData.LOG_IN}</h2>
-        <form className="cmmnt_form">
-					{error && <p>{errorMessage}</p>}
+      <div className="form_div">
+        <h2 className="form_label">{MetaData.LOG_IN}</h2>
+        <form>
+					{error && <p className="error">{errorMessage}</p>}
           {this.getFormInputFields()}
-          <div className="form-group wdth100">
-            <Button
-              className="pay paymnt_btn"
-              label={MetaData.LOG_IN}
-              onClick={(e) => this.logIn(e)}
-            />
-            <Link onClick={onClick} >{MetaData.SIGN_UP}</Link>
-          </div>
+          <p><input type="button" onClick={(e) => this.logIn(e)} value={MetaData.LOG_IN}/></p>
         </form>
+        <Link onClick={onClick} >{MetaData.SIGN_UP}</Link>
       </div>
     );
   }
