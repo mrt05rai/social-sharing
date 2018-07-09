@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router'
-// import { Redirect } from 'react-router-dom'
+import Cookies from 'universal-cookie';
 import * as MetaData from '../utils/MetaData';
 import FormInput from '../component/FormInput'
 import Button from '../component/Button'
 import Link from '../component/LinkComponent'
 import * as controller from '../utils/ValidationController';
+const cookies = new Cookies();
 
 class Login extends Component {
 	constructor(props) {
@@ -21,16 +22,10 @@ class Login extends Component {
   }
 
 	componentWillReceiveProps (nextProps) {
-		// if (nextProps.signup.changingStatus === 'success') {
-			<Redirect to={{
-        pathname: "/home"
-    }} 
-  />
-      
-			// window.location = "/home"
-			// this.props.history.push("/home");
-			console.log("nextprops>>>>>>>>>>>inside it ", nextProps)
-		// }
+		if (nextProps.login.changingStatus === 'success') {
+      cookies.set('userToken', nextProps.login.auth.token, { path: '/' });
+			this.props.history.push("/home");
+		}
 	}
   
   logIn() {

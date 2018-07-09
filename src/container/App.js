@@ -19,7 +19,7 @@ class App extends Component {
       isLoginForm
     } = this.state
     return (
-      isLoginForm ? <Login onClick={() => this.setState({ isLoginForm: false })} /> : <SignUp onClick={() => this.setState({ isLoginForm: true })} />
+      isLoginForm ? <Login {...this.props} onClick={() => this.setState({ isLoginForm: false })} /> : <SignUp {...this.props} onClick={() => this.setState({ isLoginForm: true })} />
     );
   }
 }

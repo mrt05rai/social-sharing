@@ -2,6 +2,7 @@ import React from 'react';
 
 export const SIGN_UP = 'Sign Up';
 export const LOG_IN = 'Login';
+export const LOG_OUT = 'Logout';
 export const SIGN_UP_FIELD = [
   {
     wClass: 'form-group',

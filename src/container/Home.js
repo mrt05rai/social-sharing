@@ -1,18 +1,31 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Cookies from 'universal-cookie';
+import * as MetaData from '../utils/MetaData';
+import Link from '../component/LinkComponent'
+const cookies = new Cookies();
 
 class Home extends Component {
+  logOut () {
+    cookies.remove('userToken');
+    this.props.history.push("/");
+  }
   render () {
-    console.log(">>>>> props... ", this.props)
+    const {
+      user
+    } = this.props
     return (
-      <p>Welcome !!!</p>
+      <div>
+        <p>{`Welocme ${user.name}`}</p>
+        <Link onClick={() => this.logOut()} >{MetaData.LOG_OUT}</Link>
+      </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {user: state.login}
+  return {user: state.login.auth.data}
 }
 
 Home.propTypes = {

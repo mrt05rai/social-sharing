@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import { Route, Redirect } from 'react-router'
 import * as MetaData from '../utils/MetaData';
 import FormInput from '../component/FormInput'
 import Button from '../component/Button'
@@ -22,7 +21,6 @@ class SignUp extends Component {
   
 	componentWillReceiveProps (nextProps) {
 		if (nextProps.signup.changingStatus === 'success') {
-			// <Redirect to="/" />
 			window.location = "/"
 			// this.props.history.push("/");
 		}
@@ -62,6 +60,7 @@ class SignUp extends Component {
   }
 
   render() {
+    console.log("props sign>>>>>>> ", this.props)
     const {
         onClick
     } = this.props;
