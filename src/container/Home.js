@@ -7,10 +7,18 @@ import Link from '../component/LinkComponent'
 const cookies = new Cookies();
 
 class Home extends Component {
+
   logOut () {
     cookies.remove('userToken');
     this.props.history.push("/");
   }
+
+  componentWillMount () {
+    if (cookies.get('userToken') === '' || cookies.get('userToken') === undefined) {
+        // this.props.history.push("/");
+      }
+  }
+
   render () {
     const {
       user

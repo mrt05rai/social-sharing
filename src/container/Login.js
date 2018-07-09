@@ -22,7 +22,13 @@ class Login extends Component {
   }
 
 	componentWillReceiveProps (nextProps) {
-		if (nextProps.login.changingStatus === 'success') {
+    if (nextProps.login.auth.message) {
+      this.setState({
+        error: true,
+				errorMessage: nextProps.login.auth.message
+			})
+    }
+		if (nextProps.login.changingStatus === 'success' && nextProps.login.auth.token) {
       cookies.set('userToken', nextProps.login.auth.token, { path: '/' });
 			this.props.history.push("/home");
 		}
