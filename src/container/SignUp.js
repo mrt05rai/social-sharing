@@ -21,8 +21,7 @@ class SignUp extends Component {
   
 	componentWillReceiveProps (nextProps) {
 		if (nextProps.signup.changingStatus === 'success') {
-			window.location = "/"
-			// this.props.history.push("/");
+			this.props.onClick();
 		}
 	}
 
