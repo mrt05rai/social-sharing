@@ -60,7 +60,6 @@ class SignUp extends Component {
   }
 
   render() {
-    console.log("props sign>>>>>>> ", this.props)
     const {
         onClick
     } = this.props;
