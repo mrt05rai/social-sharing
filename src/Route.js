@@ -6,16 +6,10 @@ import Cookies from 'universal-cookie';
 import App from "./container/App"
 import Home from "./container/Home"
 import Store from './app-store/redux-configure';
+import * as MetaData from './utils/MetaData';
+import Link from './component/LinkComponent'
 const history = createHistory()
 const cookies = new Cookies();
-
-const requireAuth = (nextState, replace) => {
-  if (cookies.get('userToken')) {
-    replace({
-      pathname: '/'
-    })
-  }
-}
 
 const ProjectRouter = () => (
 	<Provider store={Store} >
@@ -26,11 +20,11 @@ const ProjectRouter = () => (
 					path="/"
 					component={props => <App {...props} />}
 				/>
-				<Route
+				{cookies.get('userToken') ? <Route
 					exact
 					path="/home"
 					component={props => <Home {...props} />}
-				/>
+				/> : <div><p>You are not authorized,please login</p><Link href="/" >{MetaData.LOG_IN}</Link></div>}
 			</Switch>
 		</Router>
 	</Provider>	

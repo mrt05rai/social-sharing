@@ -13,12 +13,6 @@ class Home extends Component {
     this.props.history.push("/");
   }
 
-  componentWillMount () {
-    if (cookies.get('userToken') === '' || cookies.get('userToken') === undefined) {
-        // this.props.history.push("/");
-      }
-  }
-
   render () {
     const {
       user
